@@ -26,7 +26,7 @@ The number of attributes to generate.
 The number of centroids in the model.
 COMMENT
 
-java -cp /home/omar/Apps/moa-prerelease-2015.05/moa.jar -javaagent:/home/omar/Apps/moa-prerelease-2015.05/sizeofag.jar moa.DoTask "WriteStreamToARFFFile -s 'generators.RandomRBFGenerator -n 10 -a 2 -r 10' -f stream -m 10000 -h"
+# java -cp /home/omar/Apps/moa-prerelease-2015.05/moa.jar -javaagent:/home/omar/Apps/moa-prerelease-2015.05/sizeofag.jar moa.DoTask "WriteStreamToARFFFile -s 'generators.RandomRBFGenerator -n 10 -a 2 -r 10' -f stream -m 10000 -h"
 
 :<<'COMMENT'
 Valid options for clustering.RandomRBFGeneratorEvents:                                                                                   
@@ -68,6 +68,6 @@ Evaluation frequency
 The number of attributes to generate.
 COMMENT
 
-#java -cp /home/omar/Apps/moa-prerelease-2015.05/moa.jar -javaagent:/home/omar/Apps/moa-prerelease-2015.05/sizeofag.jar moa.DoTask "WriteStreamToARFFFile -s 'clustering.RandomRBFGeneratorEvents -K 2' -f stream -m 10000 -h"
+java -cp /home/omar/Apps/moa-prerelease-2015.05/moa.jar -javaagent:/home/omar/Apps/moa-prerelease-2015.05/sizeofag.jar moa.DoTask "WriteStreamToARFFFile -s 'clustering.RandomRBFGeneratorEvents -K 2 -N 0.02' -f stream -m 10000 -h"
 
 

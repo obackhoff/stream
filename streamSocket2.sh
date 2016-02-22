@@ -1,16 +1,16 @@
 #!/bin/bash
 
-DIR_STREAM=/home/omar/stream/split2
-DIR_TRAIN=/home/omar/stream/train
+DIR_STREAM=/home/omar/stream
+DIR_STREAM_SPLIT=/home/omar/stream/split2
 CNT=0
 TIME=0.1
-LOOP=1
+1LOOP=1
 
 ##  use this frst:  nc -lk 9998 | nc -lk 9999
 
 echo "LOOP = $LOOP"
-while [ -f $DIR_STREAM/$CNT ]; do
-    cat $DIR_STREAM/$CNT | nc 10.155.208.74 9998
+while [ -f $DIR_STREAM_SPLIT/$CNT ]; do
+    cat $DIR_STREAM_SPLIT/$CNT | nc localhost 9998
     echo "Streamed file no. $CNT"
     let CNT=CNT+1
     sleep $TIME
@@ -21,4 +21,18 @@ while [ -f $DIR_STREAM/$CNT ]; do
     fi
 done
 
+# echo "LOOP = $LOOP"
+# while true 
+# do
+# 	while read line; do
+# 	    echo $line | nc localhost 9998
+# 	    let CNT=CNT+1
+# 	    echo "Streamed $CNT lines"
+# 	    sleep $TIME
+	    
+# 	done < $DIR_STREAM/streamMod
+
+# 	let LOOP=LOOP+1
+# 	echo "LOOP = $LOOP"
+# done
     
