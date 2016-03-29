@@ -10,7 +10,7 @@ LOOP=1
 
 # echo "LOOP = $LOOP"
 while [ -f $DIR_STREAM_SPLIT/$CNT ]; do
-    cat $DIR_STREAM_SPLIT/$CNT | nc localhost 9998
+    cat $DIR_STREAM_SPLIT/$CNT | nc 10.155.208.13 9998
     echo "Streamed file no. $CNT"
     let CNT=CNT+1
     sleep $TIME
